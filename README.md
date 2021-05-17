@@ -6,15 +6,19 @@ Neste microserviço é possível criar, alterar e visualizar estoques de quotaç
 ### Pré-requisitos
 
 Antes de começar, é preciso ter instalado em sua máquina as seguintes ferramentas:
-Java 11 (Java version: 11.0.11) e Maven (Apache Maven 3.8.1). O código foi editado utilizando o Eclipse.
+Java 11 (Java version: 11.0.11), Maven (Apache Maven 3.8.1) e Docker 3.3.1. O código foi produzido utilizando o Eclipse.
 
 ### 🎲 Rodando o Back End (servidor)
 
 - Clone este repositório
-- Acesse a pasta do projeto no terminal
-- ...
-- ...
+- Importe o arquivo Maven para a sua IDE
+- Espera-se um servidor MYSQL na porta 3305 e um BD chamado bootdb
+- Você pode criar esse servidor MYSQL usando Docker, com o comando: docker container run -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=bootdb -p 3305:3306 -p 33061:33060 -d mysql:8
+- Após isso você pode rodar o StockQuoteManagerApplication. A API estará disponível na porta 8080.
 
+### Entidade
+
+A entidade Stock contém um id (String) e um Mapa em que a chave é uma data e o valor um preço. O objetivo é armazenar as quotações para ações.
 
 ### Formato das Requisições
 
