@@ -93,8 +93,7 @@ Se o id fornecido não estiver cadastrado, a API retorna 404 Not Found.
 Esse endpoint salva um stock. O stock precisa conter obrigatoriamente o id, mas não precisa conter quotations. Se não existir quotações, retorna uma lista vazia, conforme mostrado no exemplo 1.
 
 Entrada possível 1:
-```javascript
-  {
+```javascript  
     {
     "id": "petr3",
     "quotes":
@@ -102,7 +101,7 @@ Entrada possível 1:
             
       }
   }  
-  }
+  
 ```
 
 Retorno da entrada possível 1:
