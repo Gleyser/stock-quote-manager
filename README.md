@@ -1,4 +1,4 @@
-# Product-MS
+# Stock quote manager
 
 Neste microserviço é possível criar, alterar e visualizar estoques de quotações. 
 
