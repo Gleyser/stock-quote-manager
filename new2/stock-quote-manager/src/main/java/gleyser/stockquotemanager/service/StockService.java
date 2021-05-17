@@ -21,6 +21,10 @@ public class StockService {
 	public Stock createStock(Stock stock) {
 		return this.stockRespository.save(stock);
 	}
+
+	public Stock getStockById(String id) {
+		return this.stockRespository.findById(id).get();
+	}
 	
 	
 	
