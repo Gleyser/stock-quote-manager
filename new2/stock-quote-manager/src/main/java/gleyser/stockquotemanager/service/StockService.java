@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import gleyser.stockquotemanager.exception.StockNotFoundException;
 import gleyser.stockquotemanager.model.Stock;
 import gleyser.stockquotemanager.repository.StockRepository;
 
@@ -24,11 +25,11 @@ public class StockService {
 		return this.stockRespository.save(stock);
 	}
 
-	public Stock getStockById(String id) {
-		return this.stockRespository.findById(id).get();
+	public Stock getStockById(String id) throws StockNotFoundException {
+		return this.stockRespository.findById(id).orElseThrow( () -> new StockNotFoundException(id));
 	}
 
-	public Stock addQuotation(String id, LocalDate date, BigDecimal price) {
+	public Stock addQuotation(String id, LocalDate date, BigDecimal price) throws StockNotFoundException {
 		Stock stock = getStockById(id);
 		stock.addQuotation(date, price);
 		this.stockRespository.save(stock);
