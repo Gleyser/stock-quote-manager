@@ -1,5 +1,7 @@
 package gleyser.stockquotemanager.service;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,13 @@ public class StockService {
 
 	public Stock getStockById(String id) {
 		return this.stockRespository.findById(id).get();
+	}
+
+	public Stock addQuotation(String id, LocalDate date, BigDecimal price) {
+		Stock stock = getStockById(id);
+		stock.addQuotation(date, price);
+		this.stockRespository.save(stock);
+		return stock;
 	}
 	
 	

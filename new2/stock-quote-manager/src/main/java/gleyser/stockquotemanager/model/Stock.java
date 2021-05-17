@@ -53,6 +53,10 @@ public class Stock {
 		this.quotes = quotes;
 	}	
 	
+	public void addQuotation(LocalDate date, BigDecimal price) {
+		this.quotes.put(date, price);
+	}
+	
 	
 	
 	
