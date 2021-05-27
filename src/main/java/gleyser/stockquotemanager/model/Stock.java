@@ -23,8 +23,6 @@ import java.time.LocalDate;
 @Entity
 @Data
 @Builder
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Stock {
